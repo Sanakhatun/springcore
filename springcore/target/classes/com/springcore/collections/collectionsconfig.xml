@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http:/www.springframework.org/schema/context
+ http:/www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.springcore.collections.Employee" name="employee1">
+		<property name="empId" value="1001" />
+
+		<property name="empName" value="Sana Shaikh" />
+
+		<property name="phones">
+
+			<list>
+				<value>9897377748</value>
+				<value>9844738748</value>
+			</list>
+		</property>
+
+		<property name="addresses">
+			<set>
+				<value>Mumbai</value>
+				<value>Vashi</value>
+			</set>
+
+		</property>
+
+		<property name="courses">
+			<map>
+				<entry key="Java" value="2 months" />
+				<entry key="Android" value="3months" />
+				<entry key="Spring" value="1month" />
+			</map>
+		</property>
+
+	</bean>
+
+</beans>
