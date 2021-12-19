@@ -7,8 +7,28 @@
  http://www.springframework.org/schema/beans/spring-beans.xsd
  http:/www.springframework.org/schema/context
  http:/www.springframework.org/schema/context/spring-context.xsd
- http:/www.springframework.org/schema/util
- http:/www.springframework.org/schema/util/spring-util.xsd">
+http://www.springframework.org/schema/util 
+http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
+	<!-- Standalone List: We can reuse this list in any other beans: Default class will be ArrayList -->
+	<util:list id="myBestFriendList"
+		list-class="java.util.LinkedList">
+		<value>Sana</value>
+		<value>Pooja</value>
+		<value>Manoj</value>
+		<value>Aman</value>
+	</util:list>
+
+	<bean class="com.springcore.standalone.collections.Person"
+		name="person">
+
+		<!-- way 1 -->
+		<!-- <property name="friendList">
+			<ref bean="myBestFriendList" />
+		</property> -->
+
+		<!-- way 2 -->
+		<property name="friendList" ref="myBestFriendList" />
+	</bean>
 
 </beans>
