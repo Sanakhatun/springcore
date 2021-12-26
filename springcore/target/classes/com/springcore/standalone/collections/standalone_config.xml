@@ -4,11 +4,46 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
- http://www.springframework.org/schema/beans/spring-beans.xsd
- http:/www.springframework.org/schema/context
- http:/www.springframework.org/schema/context/spring-context.xsd
- http:/www.springframework.org/schema/util
- http:/www.springframework.org/schema/util/spring-util.xsd">
+	 http://www.springframework.org/schema/beans/spring-beans.xsd
+	 http:/www.springframework.org/schema/context
+	 http:/www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/util 
+	http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
+	<!-- Standalone List: We can reuse this list in any other beans: Default 
+		class will be ArrayList -->
+	<util:list id="myBestFriendList"
+		list-class="java.util.LinkedList">
+		<value>Sana</value>
+		<value>Pooja</value>
+		<value>Manoj</value>
+		<value>Aman</value>
+	</util:list>
+
+	<!-- Standalone map -->
+	<util:map map-class="java.util.HashMap" id="pincodeMap">
+		<entry key="Mumbai" value="400438" />
+		<entry key="Kolkata" value="400832" />
+	</util:map>
+
+	<!-- Standalone Properties -->
+	<util:properties id="dbConfig">
+		<prop key="driver">com.mysql.jdbc.Driver</prop>
+		<prop key="username">Sana</prop>
+		<prop key="password">sana1234</prop>
+		<prop key="url">mysql:jdbc://localhost:3306/database</prop>
+	</util:properties>
+
+	<bean class="com.springcore.standalone.collections.Person"
+		name="person">
+
+		<!-- way 1 -->
+		<!-- <property name="friendList"> <ref bean="myBestFriendList" /> </property> -->
+
+		<!-- way 2 -->
+		<property name="friendList" ref="myBestFriendList" />
+		<property name="pincodeMap" ref="pincodeMap" />
+		<property name="properties" ref="dbConfig"></property>
+	</bean>
 
 </beans>
