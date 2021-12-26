@@ -5,7 +5,7 @@
 	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	 http://www.springframework.org/schema/beans/spring-beans.xsd
-	 http:/www.springframework.org/schema/context
+	 http://www.springframework.org/schema/context
 	 http:/www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/util 
 	http://www.springframework.org/schema/util/spring-util-3.0.xsd">
@@ -43,7 +43,7 @@
 		<!-- way 2 -->
 		<property name="friendList" ref="myBestFriendList" />
 		<property name="pincodeMap" ref="pincodeMap" />
-		<property name="properties" ref="dbConfig"></property>
+		<property name="properties" ref="dbConfig"/>
 	</bean>
 
 </beans>
