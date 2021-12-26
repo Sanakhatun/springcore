@@ -9,9 +9,16 @@
      http://www.springframework.org/schema/context
      http://www.springframework.org/schema/context/spring-context.xsd
     http://www.springframework.org/schema/util 
-    http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+    http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<context:component-scan
-		base-package="com.sprincore.stereotype" />
+		base-package="com.springcore.stereotype" />
+
+	<util:list list-class="java.util.LinkedList" id="addressList">
+		<value>Mumbai</value>
+		<value>Pune</value>
+		<value>Kolkata</value>
+		<value>Kolhapur</value>
+	</util:list>
 
 </beans>
